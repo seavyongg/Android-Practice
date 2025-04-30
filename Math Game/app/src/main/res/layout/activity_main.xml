@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+ xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/img_home"
+    android:gravity="center"
+
+
+    >
+    <TextView
+        android:id="@+id/TextViewAddition"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/addition"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/TextViewSubtraction"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/subtraction"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:id="@+id/TextViewMultiplication"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="@string/multiplication"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

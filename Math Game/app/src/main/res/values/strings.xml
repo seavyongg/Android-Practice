@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Math</string>
+    <string name="addition">ADDITION</string>
+    <string name="subtraction">SUBTRACTION</string>
+    <string name="multiplication">MULTIPLICATION</string>
+
+    <!--play-->
+    <string name="score_label">Score: </string>
+    <string name="life_label">Life: </string>
+    <string name="time_label">Time: </string>
+    <string name="score">0</string>
+    <string name="life">3</string>
+    <string name="time">0</string>
+    <string name="question">Question</string>
+    <string name="Hint">Enter your answer</string>
+    <string name="ok">OK</string>
+    <string name="next">Next</string>
+
+    <!--display score-->
+    <string name="congratulations">Congratulations!</string>
+    <string name="your_score">Your score: </string>
+    <string name="play_again">Play Again</string>
+    <string name="exit">Exit</string>
+</resources>
