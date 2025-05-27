@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/primary_color"/>
+            <size android:width="56dp" android:height="56dp"/>
+        </shape>
+    </item>
+    <!-- This ensures space for the icon -->
+    <item android:drawable="@drawable/ic_add"
+        android:gravity="center"
+        android:width="24dp"
+        android:height="24dp"/>
+</layer-list>
