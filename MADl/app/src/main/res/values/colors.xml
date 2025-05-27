@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_50">#50000000</color>
+    <color name="black_80">#80000000</color>
+    <color name="dark_green_30">#30725d</color>
+    <color name="dark_green_50">#505AD6D7</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_50">#50FFFFFF</color>
+    <color name="white_80">#80FFFFFF</color>
+    <color name="white_30">#30FFFFFF</color>
+
+    <color name="primary">@color/white</color>
+    <color name="secondary">@color/black</color>
+    <color name="primary_dark">@color/black_50</color>
+    <color name="secondary_dark">@color/white_50</color>
+</resources>

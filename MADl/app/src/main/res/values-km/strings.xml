@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ITE App</string>
+    <string name="home">ទំព័រដើម</string>
+    <string name="province">ខេត្ត/ក្រុង</string>
+    <string name="search">ស្វែងរក</string>
+    <string name="account">គណនី</string>
+    <string name="my_activity">សកម្មភាពរបស់ខ្ញុំ</string>
+    <string name="year1">ឆ្នាំទី១</string>
+    <string name="year2">ឆ្នាំទី២</string>
+    <string name="year3">ឆ្នាំទី៣</string>
+    <string name="year4">ឆ្នាំទី៤</string>
+    <string name="name">ឡា ​ស៊ីវយ៉ុង</string>
+    <string name="group_edit">G9</string>
+    <string name="group">G9</string>
+    <string name="eday_title">កម្មវិធីវិស្វកម្ម</string>
+    <string name="eday_date">២០ ធ្នូ ២០២៤</string>
+    <string name="khmer_new_year_title">ពិធីប្រារព្វចូលឆ្នាំខ្មែរ</string>
+    <string name="khmer_new_year_date">១៤ មេសា ២០២៥</string>
+    <string name="version">កម្មវិធី ITE, វ.១.០.១១</string>
+    <string name="firstname">ស៊ីវយ៉ុង</string>
+    <string name="lastname">ឡា</string>
+    <string name="save">រក្សាទុក</string>
+    <!--activity profile-->
+
+</resources>

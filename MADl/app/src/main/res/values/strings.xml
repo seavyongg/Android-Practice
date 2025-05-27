@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">ITE App</string>
+    <string name="home">Home</string>
+    <string name="province">Province</string>
+    <string name="search">Search</string>
+    <string name="account">Account</string>
+    <string name="my_activity">My Activities</string>
+    <string name="year1">Year 1</string>
+    <string name="year2">Year2</string>
+    <string name="year3">Year3</string>
+    <string name="year4">Year4</string>
+    <string name="name">La Seavyong</string>
+    <string name="group">ITE-G9</string>
+    <string name="group_edit">G9</string>
+    <string name="eday_title">Eday</string>
+    <string name="eday_date">20 December 2024</string>
+    <string name="khmer_new_year_title">Khmer New Year</string>
+    <string name="khmer_new_year_date">14 April 2025</string>
+    <string name="version">ITE App, v.1.0.11</string>
+    <string name="firstname">Seavyong</string>
+    <string name="lastname">La</string>
+    <string name="save">Save</string>
+</resources>
