@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="8dp"
+    >
+    <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/purple_800"
+            >
+            <TextView
+                android:id="@+id/txtUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User ID"
+                android:padding="8dp" />
+            <TextView
+                android:id="@+id/txtId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post ID"
+                android:padding="8dp" />
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Title"
+                android:padding="8dp" />
+            <TextView
+                android:id="@+id/txtBody"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Body"
+                android:padding="8dp" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
