@@ -18,8 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private var urlApi = "https://jsonplaceholder.typicode.com/"
-    var postsList = ArrayList<Posts>()
-    lateinit var postAdapter: PostAdapter
+    lateinit var adapter: CommentsAdapter
+    var commentsList = ArrayList<Comments>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         showPost()
     }
-
     fun showPost(){
         val retrofit = Retrofit.Builder()
             .baseUrl(urlApi) // put the base url of the api
@@ -35,27 +34,32 @@ class MainActivity : AppCompatActivity() {
                 GsonConverterFactory.create()
             )
             .build()
-        var retrofitApi: RetrofitApi = retrofit.create(RetrofitApi::class.java) // create the api interface
-        var call = retrofitApi.getAllPosts()
-        call.enqueue(object : Callback<List<Posts>> {
-            override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
-               if(response.isSuccessful){
-                   binding.progressBar.isVisible = false
-                   binding.recyclerView.isVisible = true
-                   postsList = response.body() as ArrayList<Posts> // get the response body
-                   postAdapter = PostAdapter(postsList)
-                   binding.recyclerView.adapter = postAdapter
+        var retrofitApi : RetrofitApi = retrofit.create(RetrofitApi::class.java) // create the api interface
+        var call = retrofitApi.getAllComments()
+        call.enqueue(object : Callback<List<Comments>> {
+            override fun onResponse(
+                call: Call<List<Comments>>,
+                response: Response<List<Comments>>
+            ) {
+                if (response.isSuccessful){
+                    binding.progressBar.isVisible = false
+                    binding.recyclerView.isVisible = true
+                    commentsList = response.body() as ArrayList<Comments> // get the response body
+                    adapter = CommentsAdapter(commentsList)
+                    binding.recyclerView.adapter = adapter
 
-               }
+                }
             }
 
-            override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Comments>>, t: Throwable) {
                 Toast.makeText(
                     applicationContext,
                     t.localizedMessage,
                     Toast.LENGTH_LONG
                 ).show()
             }
+
+
         })
     }
 }
