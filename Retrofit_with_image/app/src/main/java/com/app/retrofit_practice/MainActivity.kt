@@ -30,13 +30,15 @@ class MainActivity : AppCompatActivity() {
         fetchCategories()
 
     }
+
+    // fetch categories from API
     fun fetchCategories(){
         RetrofitClient.api.getCategories().enqueue(object : Callback<Categories>{
             override fun onResponse(call: Call<Categories>, response: Response<Categories>) {
                 if(response.isSuccessful){
                     binding.progressBar.isVisible = false
                     binding.recyclerView.isVisible = true
-                    categories = response.body()?.data?.data as List<CategoryItem>
+                    categories = response.body()?.data?.data as List<CategoryItem>  //response body from API
                     adapter = CategoryAdapter(categories)
                     binding.recyclerView.adapter = adapter
                 }
