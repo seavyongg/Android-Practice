@@ -3,6 +3,7 @@ package com.app.afinal.view
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,13 +35,13 @@ class ProductDetailActivity : BaseActivity() {
         val productId = intent.getStringExtra(PRODUCT_ID_KEY)
         Log.d("ProductDetailActivity", "Received product ID: $productId")
         if (productId != null) {
+            binding.progressBar.visibility = View.GONE
             loadProductById(productId.toInt()) // Convert productId to Int
         } else {
             Log.d("ProductDetailActivity", "No product ID provided")
         }
 
     }
-
     private fun loadProductById(productId: Int): Product? {
         lifecycleScope.launch {
             try{

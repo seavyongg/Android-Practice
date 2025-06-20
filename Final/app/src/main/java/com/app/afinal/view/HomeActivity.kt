@@ -34,40 +34,38 @@ class HomeActivity : BaseActivity() {
         Thread.sleep(1000) // Simulate a delay for 1 second
         installSplashScreen() // Install the splash screen because it is required for the first activity
         setContentView(binding.root)
-
         //navigate to all products
         binding.icMoreProduct.setOnClickListener {
           val intent = Intent(this, ProductListActivity::class.java)
             startActivity(intent)
         }
-
         //cart
         binding.icCart.setOnClickListener{
             val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
-        loadProducts()
-        searchProduct()
-
-
+        checkInternetAndLoadData()
+    }
+    private fun checkInternetAndLoadData(){
+        if (isInternetAvailable(this)) {
+            loadProducts()
+            searchProduct()
+        } else {
+            Log.d("HomeActivity", "No internet connection")
+            showDialog("No Internet", "Please check your internet connection and try again.")
+        }
     }
 
     fun loadProducts(){
-
         lifecycleScope.launch {
             try{
                 val productList = ApiClient.productService.loadProductList()
                 displayProducts(productList)
             }catch (e: Exception) {
                 Log.d("HomeActivity", "Error loading product list: ${e.message}")
-                showDialog(
-                    title = "Error",
-                    message = "Failed to load products. Please try again later.",
-                )
-
+                showDialog("Error", "Failed to load products. Please try again later.")
             }
         }
-
     }
     fun displayProducts(productList: List<Product>){
         adapter = ProductAdapter(productList)
@@ -95,9 +93,7 @@ class HomeActivity : BaseActivity() {
     //search for product by name
     fun searchProduct(){
         binding.searchView.apply {
-
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
                 //when search is submitted, filter the product list by name
                 override fun onQueryTextSubmit(query: String?): Boolean {
                     if (query != null) {

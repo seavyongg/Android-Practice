@@ -57,22 +57,24 @@ class ProductListActivity : BaseActivity() {
     }
     private fun displayProductList(productList: List<Product>) {
         adapter = ProductAdapter(productList)
-        adapter?.onItemClickListener = {
-            position: Int -> productList[position]
-            Log.d("Product", "Product: ${productList[position].name} clicked at position $position")
-            val intent = Intent(this, ProductDetailActivity::class.java).apply {
-                val product = productList[position]
-                putExtra(PRODUCT_ID_KEY, product.id.toString())
-                Log.d("product", "Navigating to ProductDetailActivity with ID: ${product.id}")
+        try{
+            adapter?.onItemClickListener = {
+                    position ->
+                val product = productList[position] //get the product at the clicked position
+                Log.d("Product", "Product: ${productList[position].name} clicked at position $position")
+                val intent = Intent(this, ProductDetailActivity::class.java)
+                intent.putExtra(PRODUCT_ID_KEY, product.id.toString()) //put the product id in the intent
+                startActivity(intent)
             }
-            startActivity(intent)
-
+            binding.rvProductList.adapter = adapter
+            binding.rvProductList.layoutManager = GridLayoutManager(this, 2)
+            updateVisibility(productList)
+        }catch (ex: Exception) {
+            Log.d("ProductListActivity", "Error displaying product list: ${ex.message}")
+            showDialog("Error", "Failed to display product list.")
         }
-        binding.rvProductList.adapter = adapter
-        binding.rvProductList.layoutManager = GridLayoutManager(this, 2)
-        updateViibility(productList)
     }
-    private fun updateViibility(list: List<Product>){
+    private fun updateVisibility(list: List<Product>){
         if(list.isEmpty()){
             binding.txtNoProducts.visibility = View.VISIBLE
             binding.rvProductList.visibility = View.GONE
@@ -85,7 +87,7 @@ class ProductListActivity : BaseActivity() {
         binding.edtSearch.doAfterTextChanged { keyword ->
             Log.d("ProductListActivity", "Search keyword: $keyword")
            val filterProduct =  adapter?.filterByName(keyword.toString()) ?: emptyList()
-            updateViibility(filterProduct)
+            updateVisibility(filterProduct)
         }
 
 

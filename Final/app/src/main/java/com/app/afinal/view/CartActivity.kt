@@ -55,7 +55,7 @@ class CartActivity : AppCompatActivity() {
             .filter { it.isSelected}
             .sumOf { it.price * it.quantity }
         binding.txtAmountTotal.text = "$ ${total}"
-        binding.cvCheckout.visibility = if (total > 0) View.VISIBLE else View.GONE
+        binding.cvCheckout.visibility = if (total > 0) View.VISIBLE else View.GONE //handle visibility of checkout
         Log.d("Cart", "Total price updated: $total, price: " )
 
     }
